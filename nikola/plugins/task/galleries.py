@@ -87,7 +87,7 @@ class Galleries(Task, ImageProcessor):
             req_missing(['pillow'], 'render galleries')
 
         self.logger = utils.get_logger('render_galleries', self.site.loghandlers)
-        self.image_ext_list = ['.jpg', '.png', '.jpeg', '.gif', '.svg', '.bmp', '.tiff']
+        self.image_ext_list = self.image_ext_list_builtin
         self.image_ext_list.extend(self.site.config.get('EXTRA_IMAGE_EXTENSIONS', []))
 
         self.kw = {
